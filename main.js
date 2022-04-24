@@ -55,16 +55,17 @@ function addNewLineElement(object) {
   // li.appendChild()
   console.log(document.createElement("i"));
   const a1 = document.createElement("input");
-  a1.id = "yash";
+
   a1.type = "button";
   a1.value = "Edit";
   a1.addEventListener("click", () => {
     console.log(object);
     document.getElementById("name").value = object.name;
     document.getElementById("email").value = object.emailId;
+    localStorage.setItem("userDetails" + object.emailId);
     li.remove();
   });
-  a1.className = "delete";
+  a1.className = "Edit";
   a1.style.border = "2px solid green";
   console.log(a1);
   li.appendChild(a1);
